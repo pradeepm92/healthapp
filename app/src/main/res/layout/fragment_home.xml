@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.zeoner.healthapp.home.viewmodel.HomeViewModel" />
+
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".home.view.HomeFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="2"
+    android:gravity="center"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello"
+            android:paddingStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:textColor="@color/md_indigo_700"
+            android:textSize="20sp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+            <TextView
+                android:id="@+id/patientname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ravi Shankar"
+                android:textStyle="bold"
+                android:paddingStart="5dp"
+                android:textColor="@color/md_indigo_700"
+                android:textSize="20sp"/>
+            <ImageView
+                android:id="@+id/icon_greeting"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/wave"
+                app:tint="@color/md_amber_400" />
+        </LinearLayout>
+    </LinearLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_img"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        />
+
+
+</LinearLayout>
+
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:queryHint="@string/search_hint"
+        android:iconifiedByDefault="false"
+        android:background="@drawable/search_bg"
+        android:queryBackground="@null"
+        android:layout_marginEnd="15dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/speciality"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_weight="0.5"
+            android:textColor="@color/md_indigo_700"
+            android:textSize="20sp"/>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/see_all"
+            android:padding="5dp"
+            android:layout_weight="1.5"
+            android:gravity="end"
+            android:textStyle="bold"
+            android:id="@+id/specialityViewAll"
+            android:textColor="@color/md_amber_400"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:orientation="horizontal"
+        android:nestedScrollingEnabled="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="4"
+        tools:listitem="@layout/facility_list_row" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/appoinment_today"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_weight="0.5"
+            android:textColor="@color/md_indigo_700"
+            android:textSize="20sp"/>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/see_all"
+            android:padding="5dp"
+            android:layout_weight="1.5"
+            android:gravity="end"
+            android:textStyle="bold"
+            android:textColor="@color/md_amber_400"
+            android:textSize="18sp"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_tdy_appointment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="2"
+        tools:listitem="@layout/appoinment_list_row"
+        android:nestedScrollingEnabled="false"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Top_docter"
+            android:layout_weight="0.5"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:textColor="@color/md_indigo_700"
+            android:textSize="20sp"/>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/see_all"
+            android:padding="5dp"
+            android:layout_weight="1.5"
+            android:gravity="end"
+            android:textStyle="bold"
+            android:textColor="@color/md_amber_400"
+            android:textSize="18sp"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_topdocter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="2"
+        tools:listitem="@layout/topdocter_list_row"
+        android:nestedScrollingEnabled="false"
+        android:layout_margin="15dp"
+     />
+
+</LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

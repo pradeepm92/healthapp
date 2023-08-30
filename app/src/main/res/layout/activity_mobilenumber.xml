@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.zeoner.healthapp.mobilenumber.viewmodel.MobileNumberViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".mobilenumber.view.MobileNumberActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/welcome_text"
+                android:textColor="@color/purple_700"
+                android:textSize="30dp"
+                android:textStyle="bold"
+               />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="What is your mobile number?"
+                android:textColor="@color/dark_grey"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/search_bg"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/countrylayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+
+                    <ImageView
+                        android:id="@+id/country_flag"
+                        android:contentDescription="@string/no_image"
+                        android:layout_weight="0.2"
+                        android:layout_width="25dp"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/flag_in" />
+
+
+                    <TextView
+                        android:id="@+id/CountryCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/current_countryCode"
+                        android:textColor="#0B54C2"
+
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/down_arrow"
+                        android:layout_marginStart="5dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/no_image"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:backgroundTint="#3F51B5"
+                        android:src="@drawable/ic_baseline_arrow_drop_down_24" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/purple_200" />
+
+                <EditText
+                    android:id="@+id/mobnum_ed"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:singleLine="true"
+                    android:maxLength="12"
+                    android:backgroundTint="@android:color/transparent"
+                    android:inputType="phone"
+                    android:hint="@string/mobile_number"
+                    android:gravity="center_vertical"
+                    />
+
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingTop="2dp"
+                android:text="Please enter valid mobile number"
+                android:textColor="@color/md_red_700"
+                android:textSize="14dp" />
+
+
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/otp_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/purple_500"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textSize="18dp"
+            app:elevation="10dp"
+            android:shadowColor="@color/light_grey"
+            app:cornerRadius="20dp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="@string/or_text"
+                android:textColor="@color/light_grey"
+                android:textSize="18dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@android:color/darker_gray" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/createaccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:gravity="center"
+            android:text="@string/createaccount"
+            android:textColor="@color/light_grey"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+</layout>

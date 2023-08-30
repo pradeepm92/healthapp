@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bottom__bg"
+    android:orientation="vertical">
+    <LinearLayout
+
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Rebranding text color hint + letter spacing + lineSpacing added-->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:textSize="17.0sp"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:textColorHint="#660A3B60"
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/country_border_edittext"
+            android:drawableStart="@drawable/ic_search"
+            android:lineSpacingExtra="5sp"
+            android:alpha="0.4"
+            android:textCursorDrawable="@drawable/bg_edittext_cursor"
+            android:drawablePadding="10dp"
+            android:singleLine="true"
+            android:inputType="text"
+            android:padding="10dp"
+            android:hint="@string/search_country"
+            android:imeOptions="actionSearch"
+            android:maxLines="1"/>
+        <!-- android:fontFamily="@font/sf_pro_display_regular" android:textColorHint="#000000"-->
+
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_marginLeft="5dp"
+            android:id="@+id/close"
+            android:tint="#9DB1BF"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:contentDescription="@string/no_image"
+            android:src="@drawable/close" />
+
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tlbottom_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="5dp" />
+
+</LinearLayout>
